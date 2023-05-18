@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 15:05:24 by ekamada           #+#    #+#             */
+/*   Updated: 2023/05/18 15:22:44 by ekamada          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#include "libft.h"
 int ft_strlcat(char *dst, const char *src, int n)
 {
 	int	i;
@@ -22,8 +36,6 @@ int ft_strlcat(char *dst, const char *src, int n)
 	else 	return n + j;
 }
 /*
-#include <stdio.h>
-#include <string.h>
 int main()
 {
 	cha˙r src[50] = ":o:p:)";

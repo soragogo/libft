@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:12 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:29 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:52 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int ft_strlen(const char *s)
 {
 	int i;
@@ -20,7 +21,6 @@ int ft_strlen(const char *s)
 	return(i);
 }
 /*
-#include <stdio.h>
 
 int main()
 {

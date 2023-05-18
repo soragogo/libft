@@ -6,18 +6,18 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:42 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:24:08 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:20 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int ft_isascii(char c)
 {
-	if (c <= 177 && c >= 0)
+	if ((int)c <= 177 && (int)c >= 0)
 	return (0);
 	else return (1);
 }
 /*
-#include <stdio.h>
 int main()
 {
 	char c = '3';

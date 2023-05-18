@@ -6,12 +6,12 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:48:17 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 13:56:23 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:26 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include        <stdio.h>
-#include        <string.h>
+
+#include "libft.h"
 
 int	ft_memcmp(const void *buf1, const void *buf2, int n)
 {

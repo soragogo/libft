@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:36 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:25 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:16 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 void *ft_bzero(void *b, int n)
 {
 	char	*p;
@@ -25,7 +26,6 @@ void *ft_bzero(void *b, int n)
 	return (b);
 }
 /*˙
-#include <stdio.h>
 int main()
 {
 	void *b[30];

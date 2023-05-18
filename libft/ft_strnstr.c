@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:56:39 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:27 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:56 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 char    *ft_strnstr(char *str, char *to_find, int n)
 {
         int     t;
@@ -36,8 +37,6 @@ char    *ft_strnstr(char *str, char *to_find, int n)
         return (&str[t - count]);
 }
 
-// #include <string.h>
-// #include <stdio.h>
 // int main()
 // {
 //         char str[30] = "sergsawe";

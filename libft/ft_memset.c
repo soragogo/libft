@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:50 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:23 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:39 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 void *ft_memset(void *b, int c, int n)
 {
 	char	*p;
@@ -25,7 +26,6 @@ void *ft_memset(void *b, int c, int n)
 	return (b);
 }
 /*
-#include <stdio.h>
 int main()
 {
 	void *b[30];

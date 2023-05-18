@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 21:37:34 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:50 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:23 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 char	*ft_memchr(const void *s, int ch, int n)
 {
 	int				i;

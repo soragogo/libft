@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:40 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:24:09 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:19 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int ft_isalpha(char c)
 {
 	if ((c <= 'z' && c >= 'a')
@@ -18,7 +19,6 @@ int ft_isalpha(char c)
 	else return (1);
 }
 /*
-#include <stdio.h>
 int main()
 {
 	char c = '3';

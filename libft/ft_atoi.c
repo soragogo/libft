@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:32 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:26 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:15 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 int	ft_atoi(const char *str)
 {
 	int	i;

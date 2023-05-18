@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:40:54 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:55 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:50 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 void	ft_else(char *dest, char *src, unsigned int size)
 {
 	{

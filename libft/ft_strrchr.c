@@ -6,11 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:39:56 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 14:23:26 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:58 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
@@ -35,7 +35,6 @@ char	*ft_strrchr(const char *s, int c)
 	}
 }
 /*
-#include <stdio.h>
 int main()
 {
 	char str[] = "abbdefghijklmnopqrstuvwxyzb", *p;

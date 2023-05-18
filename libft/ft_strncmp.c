@@ -6,10 +6,11 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:55:13 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:53 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 15:22:54 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int	t;
@@ -31,7 +32,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (t);
 }
 /*
-#include <stdio.h>
 int main()
 {
 	char copy[10] = {"he1234"};
