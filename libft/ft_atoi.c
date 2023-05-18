@@ -6,24 +6,28 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:32 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:24:11 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 14:23:26 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i = 0;
-	int j = 0;
-	int minus = 1;
-	while(str[i] == ' ')
+	int	i;
+	int	j;
+	int	minus;
+
+	i = 0;
+	j = 0;	
+	minus = 1;
+	while (str[i] == ' ')
 		i++;
-	if(str[i] == '-')
+	if (str[i] == '-')
 	{
 		minus = -1;
 		i++;
 	}
-	while(str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		j *= 10;
 		j += str[i] - '0';

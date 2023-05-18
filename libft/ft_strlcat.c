@@ -1,9 +1,13 @@
 int ft_strlcat(char *dst, const char *src, int n)
 {
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	while(dst[i])
+	int	i;
+	int	j;
+	int	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (dst[i])
 		i++;
 	k = i;
 	while (src[j] && i + j < n - 1)

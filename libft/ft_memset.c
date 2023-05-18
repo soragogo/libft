@@ -6,15 +6,17 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:50 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:52 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 14:23:23 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void *ft_memset(void *b, int c, int n)
 {
-	char *p = b;
-	int i = 0;
-	
+	char	*p;
+	int		i;
+
+	p = b;
+	i = 0;
 	while (i < n)
 	{
 		p[i] = c;

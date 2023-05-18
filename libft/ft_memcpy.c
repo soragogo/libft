@@ -6,15 +6,15 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:04 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:47 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/18 14:23:19 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memcpy(void *dst, const void *src, int n)
 {
-	int				i;
-	unsigned char	*dst1;
-	unsigned char	*src1;
+	int           i;
+	unsigned char *dst1;
+	unsigned char *src1;
 
 	i = 0;
 	dst1 = (unsigned char *)dst;
