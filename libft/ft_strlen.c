@@ -6,17 +6,18 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:12 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:52 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/20 18:57:59 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_strlen(const char *s)
+
+size_t	ft_strlen(const char *str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
-	while(s[i])
+	while(str[i])
 		i++;
 	return(i);
 }

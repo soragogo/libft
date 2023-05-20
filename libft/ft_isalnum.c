@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:39 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:18 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/19 17:22:05 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@
 // 	return (0);
 // 	else return (1);
 // }
-int ft_isalnum(char c)
+int ft_isalnum(int c)
 {
-	if ((ft_isdigit(c) == 0) || (ft_isalpha(c) == 0))
-		return 0;
-	else return 1;
+	if ((ft_isdigit(c) == 1) || (ft_isalpha(c) == 1))
+		return 1;
+	else return 0;
 }
 /*
 int main()

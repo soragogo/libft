@@ -6,20 +6,20 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:44 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:21 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/19 17:15:33 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_isdigit(char c)
+int ft_isdigit(int c)
 {
 	if (c <= '9' && c >= '0')
-	return (0);
-	else return (1);
+	return (1);
+	else return (0);
 }
 /*
 int main()
 {
-	char c = '3';
+	int c = 3;
 	printf("%d", ft_isalpha(c));
 }*/
