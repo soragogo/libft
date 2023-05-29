@@ -6,40 +6,45 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:11:31 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/20 17:47:10 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/29 15:14:57 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-void	*ft_calloc(int n, int size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*str;
+   size_t memory;
 
-	str = (void *)malloc(size * n);
+   if(count == 0 || size == 0)
+      memory = 1;
+   else
+      memory = size * count;
+	str = (void *)malloc(memory);
    if (str == NULL)
    {
       errno = 0;
       return (NULL);
    }
-	return (str);
+	return (ft_bzero(str, memory));
 }
 
 // int main(void)
 // {
 //    int *ptr,*p;
-//    int i;
+//    unsigned long i;
 
 //    /* 500個のintサイズのメモリを確保 */
-//    ptr = (int *)ft_calloc(500,sizeof(int));
+//    ptr = (int *)ft_calloc((size_t)SIZE_MAX / 10 + (size_t)1, 10);
 //    if(ptr == NULL) {
 //       printf("メモリが確保できません\n");
 //       exit(EXIT_FAILURE);
 //    }
-
+//    printf("%lu", SIZE_MAX);
 //    p = ptr;
-//    for (i=0; i<500; i++) {
+//    for (i=0; i<18446744073709551615; i++) {
 //       *p = i;
 //       printf("%d ",*p);
 //       p++;

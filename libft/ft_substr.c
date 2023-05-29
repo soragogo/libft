@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 19:44:12 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/17 22:23:56 by ekamada          ###   ########.fr       */
+/*   Created: 2023/05/18 15:38:30 by ekamada           #+#    #+#             */
+/*   Updated: 2023/05/29 15:38:52 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
+#include "libft.h"
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int i;
-
+	char *str;
+	size_t i;
+	
 	i = 0;
-	while(s[i])
-		i++;
-	return(i);
+	str = malloc(sizeof(char) * len);
+	if (str == NULL)
+		return (NULL);
+	while (i < len && s[start])
+	{
+		str[i++] = s[start++];
+	}
+	return (str);
 }
-/*
-#include <stdio.h>
 
-int main()
-{
-	char test[] = "Helloooooooo:)";
-	printf("%d", ft_strlen(test));
-}*/
+// int main()
+// {
+// 	char s[] = "hello";
+// 	int start = 2;
+// 	int len = 3;
+
+// 	char *str = ft_substr(s, start, len);
+// 	printf("%s", str);
+// 	free(str);
+	
+// }

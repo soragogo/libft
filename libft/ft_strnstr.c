@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:56:39 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:56 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/29 14:28:45 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char    *ft_strnstr(char *str, char *to_find, int n)
         t = 0;
         u = 0;
         count = 0;
+        if (str == NULL)
+                return(NULL);
         while (to_find[count] != '\0')
                 count++;
         if (to_find[0] == '\0')
@@ -39,10 +41,10 @@ char    *ft_strnstr(char *str, char *to_find, int n)
 
 // int main()
 // {
-//         char str[30] = "sergsawe";
+//         //char str[30] = "sergsawe";
 //         char to_find[30] = "r";
 
-//         printf("ft:%s\n", ft_strnstr(str, to_find, 2));
-// 		printf("st:%s\n", strnstr(str, to_find, 2));
+//         //printf("ft:%s\n", ft_strnstr(NULL, to_find, 2));
+// 	printf("st:%s\n", strnstr(NULL, to_find, 0));
 
 // }

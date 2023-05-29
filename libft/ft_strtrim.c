@@ -6,58 +6,35 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 12:43:00 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/20 17:45:34 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/29 18:42:31 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// int	ft_strlen(char const *str)
-// {
-//         int     i;
-
-//         i = 0;
-//         while (str[i] != '\0')
-//                 i++;
-//         return (i);
-// }
-
 char *ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int i_;
-	int j;
-	char *s2;
-	int flag;
+	int s1_len;
+	int set_len;
+	int check;
+	int trim;
 	
-	s2 = (char*)malloc(sizeof(char) * ft_strlen(s1));
-	if (s2 == NULL)
-		return (NULL);
-	i = 0;
-	i_ = 0;
-	j = 0;
-	flag = 0;
-	while (s1[i])
+	check = 1;
+	trim = 0;
+	s1_len = ft_strlen(s1);
+	set_len = ft_strlen(set);
+	while(trim)
 	{
-		while(set[j])
+		while(*s1 && *set)
 		{
-			if (s1[i] == set[j])
+			if (*s1 == *set)
 			{
-				flag = 1;
+				check = 0;
+				set++;
 			}
-			j++;
 		}
-		if (flag == 0)
-		{
-			s2[i_] = s1[i];
-			i_++;
-		} 
-		j = 0;
-		flag = 0;
-		i++;
 	}
-	
-	return (s2);
+
 }
 
 // int main()

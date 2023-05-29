@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 21:17:08 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:40 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/29 14:28:56 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
-		{
+		if (s[i] == (char)c)
 			return ((char *)s + i);
-		}
 		i++;
 	}
+	if (c == 0)
+		return((char *)s + i);
 	return (NULL);
 }
 
