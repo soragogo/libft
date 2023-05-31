@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:11:31 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 15:14:57 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/31 10:08:31 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ void *ft_calloc(size_t count, size_t size)
    if (count == 0 || size == 0)
       memory = 1;
    else
+   {
+      if (size * count / count != size)
+         return (NULL);
       memory = size * count;
+   }
    str = (void *)malloc(memory);
    if (str == NULL)
    {

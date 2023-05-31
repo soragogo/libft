@@ -1,2 +1,4 @@
 testcase
 test
+*.o
+*.a

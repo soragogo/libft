@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:43:49 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 15:38:37 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/31 10:10:53 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 #include <string.h>
 #include <errno.h>
 
-// bonus part
-t_list *ft_lstnew(void *content);
+// // bonus part
+// t_list *ft_lstnew(void *content);
 
-typedef struct s_list
-{
-    void *content;
-    struct s_list *next;
-} t_list;
+// typedef struct s_list
+// {
+//     void *content;
+//     struct s_list *next;
+// } t_list;
 
 int ft_atoi(const char *str);
 void *ft_bzero(void *b, int n);
