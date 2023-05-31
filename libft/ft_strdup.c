@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:53 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:42 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/31 21:26:05 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,12 @@ char *ft_strdup(const char *str)
 	int i;
 	char *cpy;
 
-	i = 0;
-	while(str[i])
-		i++;
+	i = ft_strlen(str);
 	cpy = malloc(sizeof(char) * i + 1);
 	if (cpy == NULL)
 		return NULL;
-	i = 0;
-	while(str[i])
-	{
-		cpy[i] = str[i];
-		i++;
-	}
+	ft_strlcpy(cpy, str, i + 1);
+	printf("%s", cpy);
 	return (cpy);
 }
 
