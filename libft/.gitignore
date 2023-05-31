@@ -3,3 +3,5 @@ test
 *.o
 *.a
 libftTester
+libftTester-master
+.DS_Store
