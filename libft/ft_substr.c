@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:38:30 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 15:38:52 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/05/31 10:27:04 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *str;
-	size_t i;
 
-	i = 0;
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
+	
 	if (start >= ft_strlen(s) || len == 0)
 	{
 		*str = 0;
@@ -27,8 +26,8 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	else
 	{
-		while (i < len && s[start])
-			str[i++] = s[start++];
+		s += start;
+		ft_strlcpy(str, s, len + 1);
 	}
 	return (str);
 }
