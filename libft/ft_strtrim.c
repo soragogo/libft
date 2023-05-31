@@ -14,65 +14,61 @@
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	int s1_len;
 	int set_len;
 	int check;
 	char *s1_;
 	char *cpy;
-	
+
 	check = 1;
-	s1_len = ft_strlen(s1);
 	set_len = ft_strlen(set);
-	while(*s1)
+	while (*s1)
 	{
-		while(*set)
+		while (*set)
 		{
 			if (*s1 == *set)
-			{
 				check = 0;
-				set++;
-			}
+			set++;
 		}
-		if (!check)
+		if (check == 1)
 			break;
 		check = 1;
 		s1++;
 		set -= set_len;
 	}
+	if (*set == 0)
+		set -= set_len;
+
 	s1_ = (char *)s1;
 	check = 1;
-	while(*(s1 + 1))
-		s1++;
-	while(*s1)
+	while (*(s1_ + 1))
+		s1_++;
+	while (*s1_)
 	{
-		while(*set)
+		while (*set)
 		{
-			if(*s1 == *set)
-			{
+			if (*s1_ == *set)
 				check = 0;
-				set ++;
-			}
+			set++;
 		}
-		if (!check)
+		if (check == 1)
 			break;
 		check = 1;
-		s1--;
+		s1_--;
 		set -= set_len;
 	}
-	cpy = malloc(sizeof(char)*(s1 - s1_ + 1));
-	ft_strlcpy(cpy, s1_, s1 - s1_);
+
+	cpy = malloc(sizeof(char) * (s1_ - s1 + 2));
+	ft_strlcpy(cpy, s1, s1_ - s1 + 2);
 	return (cpy);
-
-
 }
 
 // int main()
 // {
-// 	char s1[] = "1234567890";
-// 	char set[] = "13579";
+// 	char s1[] = "Hello world";
+// 	char set[] = "world";
 // 	char *s2 = ft_strtrim(s1, set);
 
-// 	printf("%s", s2);
+// 	// printf("%s", s2);
 // 	free(s2);
 // 	return 0;
 // }

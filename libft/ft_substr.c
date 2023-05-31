@@ -15,26 +15,31 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *str;
 	size_t i;
-	
+
 	i = 0;
-	str = malloc(sizeof(char) * len);
+	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-	while (i < len && s[start])
+	if (start >= ft_strlen(s) || len == 0)
 	{
-		str[i++] = s[start++];
+		*str = 0;
+		return (str);
+	}
+	else
+	{
+		while (i < len && s[start])
+			str[i++] = s[start++];
 	}
 	return (str);
 }
 
 // int main()
 // {
-// 	char s[] = "hello";
-// 	int start = 2;
-// 	int len = 3;
+// 	char s[] = "libft-test-tokyo";
+// 	int start = 20;
+// 	int len = 100;
 
 // 	char *str = ft_substr(s, start, len);
 // 	printf("%s", str);
 // 	free(str);
-	
 // }

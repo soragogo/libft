@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-char	**ft_count_and_malloc(char **matrix, const char *s, char c)
+char **ft_count_and_malloc(char **matrix, const char *s, char c)
 {
-	int	i;
-	int	j;
-	int	count;
+	int i;
+	int j;
+	int count;
 
 	i = 0;
 	j = 0;
@@ -34,17 +34,17 @@ char	**ft_count_and_malloc(char **matrix, const char *s, char c)
 		while (s[i] == c)
 			i++;
 		count = 0;
-		j ++;
+		j++;
 	}
 	matrix[j] = NULL;
 	return (matrix);
 }
 
-char	**ft_making_matrix(char **matrix, const char *s, char c)
+char **ft_making_matrix(char **matrix, const char *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
 	j = 0;
@@ -68,10 +68,10 @@ char	**ft_making_matrix(char **matrix, const char *s, char c)
 	return (matrix);
 }
 
-int	ft_count_blocs(char const *s, char c)
+int ft_count_blocs(char const *s, char c)
 {
-	int	i;
-	int	blocs;
+	int i;
+	int blocs;
 
 	i = 1;
 	blocs = 0;
@@ -82,20 +82,20 @@ int	ft_count_blocs(char const *s, char c)
 		if (s[i] != c)
 		{
 			if (s[i - 1] == c)
-				blocs ++;
+				blocs++;
 		}
-		i ++;
+		i++;
 	}
 	return (blocs);
 }
 
-char	**ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-	char	**matrix;
-	int		blocs;
-	int		count;
+	char **matrix;
+	int blocs;
+	// int		count;
 
-	count = 0;
+	// count = 0;
 	blocs = ft_count_blocs(s, c);
 	matrix = (char **)malloc(sizeof(char *) * (blocs + 1));
 	matrix = ft_count_and_malloc(matrix, s, c);
@@ -105,7 +105,7 @@ char	**ft_split(char const *s, char c)
 // int main()
 // {
 // 	char *s = "a1a22a333a4444a55555a666666a7777777aa";
-// 	char c = 'a'; 
+// 	char c = 'a';
 
 // 	char **matrix = ft_split(s, c);
 // 	for(int i = 0;matrix[i] != NULL; i++)
