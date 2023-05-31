@@ -12,10 +12,22 @@
 
 #include "libft.h"
 
+<<<<<<< Updated upstream
 
 char **ft_split(char const *s, char c)
 {
 }
+=======
+// char **ft_split(char const *s, char c)
+// {
+// 	char *s_ = s;
+// 	while (*s)
+// 	{
+// 		while (*s == c)
+// 			s++;
+// 	}
+// }
+>>>>>>> Stashed changes
 
 // int main()
 // {
