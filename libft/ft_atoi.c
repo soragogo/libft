@@ -6,18 +6,18 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:32 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 14:28:46 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 21:55:20 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int check_overflow(const char *str, int minus)
+int check_overflow(const char *str, int minus, size_t count)
 {
 	char *str_ = (char *)str;
-	if(ft_strlen(str_) > ft_strlen("9223372036854775807"))
+	if(count > ft_strlen("9223372036854775807"))
 		return(-1);
-	else if(ft_strlen(str_) == ft_strlen("9223372036854775807"))
+	else if(count == ft_strlen("9223372036854775807"))
 	{
 		if(minus < 0)
 		{
@@ -31,19 +31,31 @@ int check_overflow(const char *str, int minus)
 	return(1);
 }
 
+size_t num_len(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	while(str[i] >= '0' && str[i] <= '9')
+		i++;
+	return(i);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
 	long long int j;
 	int	minus;
+	size_t count;
 
 	i = 0;
 	j = 0;	
+	count = 0;
 	minus = 1;
 	while ((*str == ' ')
-			||(str[i] == '\t')||(str[i] == '\n')
-			||(str[i] == '\v')||(str[i] == '\f')
-			||(str[i] == '\r')||(str[i] == ' '))
+			||(*str == '\t')||(*str == '\n')
+			||(*str == '\v')||(*str == '\f')
+			||(*str == '\r')||(*str == ' '))
 		str++;
 	if (*str == '-')
 	{
@@ -54,8 +66,9 @@ int	ft_atoi(const char *str)
 		str++;
 	while(*str == '0')
 			str++;
-	if (check_overflow(str, minus) != 1)
-		return(check_overflow(str, minus));
+	count = num_len(str);
+	if (check_overflow(str, minus, count) != 1)
+		return(check_overflow(str, minus, count));
 	while (*str >= '0' && *str <= '9')
 	{
 		j = j *10 + *str - '0';

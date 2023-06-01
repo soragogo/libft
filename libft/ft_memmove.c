@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 20:26:29 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:38 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 20:53:30 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, int n)
 	unsigned char	*src1;
 
 	i = 0;
+	if(dst == NULL && src == NULL)
+		return(NULL);
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
 	if (dst1 < src1)

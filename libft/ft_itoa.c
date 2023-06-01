@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/01 20:40:17 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 21:11:19 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,27 @@ void ft_itoa_recursive(char *ascii, int n)
 	*ascii = 0;
 }
 
+int digit_count(n)
+{
+	int i;
+	
+	i = 0;
+	if (n <= 0)
+		i++;
+	while(n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	i++;
+	return (i);
+}
+
+
 char *ft_itoa(int n)
 {
 	char *ascii;
+
 	
 	if (n == -2147483648)
 	{
@@ -47,7 +65,9 @@ char *ft_itoa(int n)
 		ft_strlcpy(ascii, "-2147483648", 12);
 		return (ascii);
 	}	
-	ascii = (char *)malloc(sizeof(char) * 12);
+	ascii = (char *)malloc(sizeof(char) * digit_count(n));
+	if (ascii == NULL)
+		return (NULL);
 	if (n < 0)
 	{
 		ascii[0] = '-';

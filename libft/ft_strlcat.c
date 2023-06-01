@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:05:24 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/20 19:49:08 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 21:19:20 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,28 @@
 size_t ft_strlcat(char * dst, const char * src, size_t dstsize)
 {
 	size_t return_item;
-	size_t mojisuu;
+	size_t cat_len;
 
-	if(dst == NULL)
+	if(dstsize == 0)
 		return(ft_strlen(src));
-	mojisuu = 0;
+
+	cat_len = 0;
 	if (dstsize < ft_strlen(dst))
 	{
-		mojisuu = dstsize;
+		cat_len = dstsize;
 		return_item = ft_strlen(src) + dstsize;
 	}
 	else
 	{	
-		mojisuu = dstsize - ft_strlen(dst);
+		cat_len = dstsize - ft_strlen(dst);
 		return_item = ft_strlen(src) + ft_strlen(dst);
-	
+
 	dstsize -= ft_strlen(dst);
 	dst += ft_strlen(dst);
-	while(mojisuu > 1 && *src)
+	while(cat_len > 1 && *src)
 	{
 		*dst++ = *src++;
-		mojisuu--;
+		cat_len--;
 	}
 	
 	*dst = 0;

@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 13:56:39 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 14:28:45 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 21:23:45 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 
         if (*needle == 0)
                 return ((char *)haystack);
+        if (len == 0)
+                return(NULL);
         needle_len = ft_strlen(needle);
         while (*haystack && len >= needle_len)
         {

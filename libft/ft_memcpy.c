@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:04 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:34 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 20:53:10 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, int n)
 	unsigned char *src1;
 
 	i = 0;
+	if(dst == NULL && src == NULL)
+		return(NULL);
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
 	while (i < n)
@@ -25,6 +27,7 @@ void	*ft_memcpy(void *dst, const void *src, int n)
 		dst1[i] = src1[i];
 		i++;
 	}
+
 	return ((void *)dst1);
 }
 

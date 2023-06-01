@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 12:39:55 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 17:07:50 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 21:57:47 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char    *ft_strjoin(char const *s1, char const *s2)
         int     strslen;
 
         i = 0;
+        if (s1 == NULL || s2 == NULL)
+                return (NULL);
         strslen = ft_strlen(s1) + ft_strlen(s2);
         joined = (char *)malloc(sizeof(char)* (strslen + 1));
         if(joined == NULL)
