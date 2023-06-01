@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 17:54:18 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 20:40:17 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ char *ft_itoa(int n)
 	
 	if (n == -2147483648)
 	{
-		ascii = "-2147483648";
+		ascii = malloc(sizeof(char) * 12);
+		if (ascii == NULL)
+			return (NULL);
+		ft_strlcpy(ascii, "-2147483648", 12);
 		return (ascii);
 	}	
 	ascii = (char *)malloc(sizeof(char) * 12);
