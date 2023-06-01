@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 12:43:00 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/31 10:05:00 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 22:03:19 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char *ft_strtrim(char const *s1, char const *set)
 
 	check = 1;
 	set_len = ft_strlen(set);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	while (*s1)
 	{
 		while (*set)
@@ -58,6 +60,8 @@ char *ft_strtrim(char const *s1, char const *set)
 	}
 
 	cpy = malloc(sizeof(char) * (s1_ - s1 + 2));
+	if (cpy == NULL)
+		return (NULL);
 	ft_strlcpy(cpy, s1, s1_ - s1 + 2);
 	return (cpy);
 }

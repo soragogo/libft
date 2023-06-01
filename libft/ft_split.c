@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:09:01 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/01 21:15:57 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/01 22:03:17 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char **ft_split(char const *s, char c)
 	int i = 0;
 	char **matrix;
 
+	if (s == NULL)
+		return (NULL);
 	if (*s == 0)
 	{
 		matrix = (char**)malloc(sizeof(char *));
