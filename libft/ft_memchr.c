@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_memchr(const void *s, int c, size_t n)
+char *ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
-	const unsigned char*	s1;
-	
+	size_t i;
+	const unsigned char *s1;
+
 	s1 = (const unsigned char *)s;
 	i = 0;
 	while (i < n)
@@ -35,13 +35,13 @@ char	*ft_memchr(const void *s, int c, size_t n)
 
 int main(void)
 {
-        char str[] = "abcdef\0ghij";
-        char *p;
-        
-        p = memchr(str, 'h', 12);
-        printf("検索文字は文字列の%ld番目\n", p - str);
-        
-        return 0;
-	
+		char str[] = "abcdef\0ghij";
+		char *p;
+
+		p = memchr(str, 'h', 12);
+		printf("検索文字は文字列の%ld番目\n", p - str);
+
+		return 0;
+
 }
 */

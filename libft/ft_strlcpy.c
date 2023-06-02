@@ -13,20 +13,19 @@
 #include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{	
+{
 	size_t count;
 
-	if(dstsize == 0)
-		return(ft_strlen(src));
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	count = ft_strlen(src);
 	while (dstsize > 1 && *src)
 	{
 		*dst++ = *src++;
-		dstsize --; 
+		dstsize--;
 	}
 	*dst = 0;
 	return (count);
-	
 }
 
 // int main()

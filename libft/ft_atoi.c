@@ -82,5 +82,3 @@ int ft_atoi(const char *str)
 // {
 // 	printf("%d", ft_atoi("18446744073709551614"));
 // }
-
-ft_strmapi : [MISSING] ft_striteri : [MISSING] ft_putchar_fd : [MISSING] ft_putstr_fd : [MISSING] ft_putendl_fd : [MISSING] ft_putnbr_fd : [MISSING]

@@ -13,8 +13,8 @@
 #include "libft.h"
 void *ft_memset(void *b, int c, int n)
 {
-	char	*p;
-	int		i;
+	char *p;
+	int i;
 
 	p = b;
 	i = 0;

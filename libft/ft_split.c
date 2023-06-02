@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_untilc_len(char const *s, char c)
+static int ft_untilc_len(char const *s, char c)
 {
 	int i;
 
@@ -22,7 +22,7 @@ int ft_untilc_len(char const *s, char c)
 	return (i);
 }
 
-char const *ft_ctrim(char const *s, char c)
+static char const *ft_ctrim(char const *s, char c)
 {
 	if (*s == c)
 	{
@@ -32,7 +32,7 @@ char const *ft_ctrim(char const *s, char c)
 	return (s);
 }
 
-int ft_count_blocs(char const *s, char c)
+static int ft_count_blocs(char const *s, char c)
 {
 	int count;
 
