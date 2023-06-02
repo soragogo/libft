@@ -7,7 +7,7 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 
     index = *lst;
     save = NULL;
-    if (lst == NULL || *lst == NULL)
+    if (lst == NULL || *lst == NULL || del == NULL)
         return;
     while (index != NULL)
     {
