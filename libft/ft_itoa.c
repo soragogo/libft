@@ -15,14 +15,15 @@
 void ft_itoa_recursive(char *ascii, int n)
 {
 	unsigned long i;
-	unsigned long n_ = (unsigned long)n;
+	unsigned long n_;
 
+	n_ = (unsigned long)n;
 	if (n_ < 10)
 		*ascii++ = n_ + '0';
 	if (n_ > 9)
 	{
 		i = 1;
-		while(i < n_)
+		while (i < n_)
 			i *= 10;
 		i /= 10;
 		while (i != 0)
@@ -38,11 +39,11 @@ void ft_itoa_recursive(char *ascii, int n)
 int digit_count(n)
 {
 	int i;
-	
+
 	i = 0;
 	if (n <= 0)
 		i++;
-	while(n != 0)
+	while (n != 0)
 	{
 		n /= 10;
 		i++;
@@ -51,12 +52,10 @@ int digit_count(n)
 	return (i);
 }
 
-
 char *ft_itoa(int n)
 {
 	char *ascii;
 
-	
 	if (n == -2147483648)
 	{
 		ascii = malloc(sizeof(char) * 12);
@@ -64,21 +63,20 @@ char *ft_itoa(int n)
 			return (NULL);
 		ft_strlcpy(ascii, "-2147483648", 12);
 		return (ascii);
-	}	
+	}
 	ascii = (char *)malloc(sizeof(char) * digit_count(n));
 	if (ascii == NULL)
 		return (NULL);
 	if (n < 0)
 	{
 		ascii[0] = '-';
-		ascii ++;
+		ascii++;
 		ft_itoa_recursive(ascii, -n);
-		ascii --;
+		ascii--;
 	}
 	else
 		ft_itoa_recursive(ascii, n);
 	return (ascii);
-
 }
 
 // int main()

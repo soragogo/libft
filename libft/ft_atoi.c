@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int	check_overflow(const char *str, int minus, size_t count)
+static int check_overflow(const char *str, int minus, size_t count)
 {
-	char	*str_;
+	char *str_;
 
 	str_ = (char *)str;
 	if (count > ft_strlen("9223372036854775807"))
@@ -32,9 +32,9 @@ static int	check_overflow(const char *str, int minus, size_t count)
 	return (1);
 }
 
-static size_t	num_len(const char *str)
+static size_t ßßnum_len(const char *str)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (str[i] >= '0' && str[i] <= '9')
@@ -42,9 +42,9 @@ static size_t	num_len(const char *str)
 	return (i);
 }
 
-static long long int	num_maker(const char *str)
+static long long int num_maker(const char *str)
 {
-	long long int	num;
+	long long int num;
 
 	num = 0;
 	while (*str >= '0' && *str <= '9')
@@ -55,15 +55,14 @@ static long long int	num_maker(const char *str)
 	return (num);
 }
 
-int	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
-	int				minus;
-	size_t			count;
+	int minus;
+	size_t count;
 
 	count = 0;
 	minus = 1;
-	while ((*str == '\t') || (*str == '\n') || (*str == '\v')
-		|| (*str == '\f') || (*str == '\r') || (*str == ' '))
+	while ((*str == '\t') || (*str == '\n') || (*str == '\v') || (*str == '\f') || (*str == '\r') || (*str == ' '))
 		str++;
 	if (*str == '-')
 	{
@@ -73,7 +72,7 @@ int	ft_atoi(const char *str)
 	else if (*str == '+')
 		str++;
 	while (*str == '0')
-			str++;
+		str++;
 	count = num_len(str);
 	if (check_overflow(str, minus, count) != 1)
 		return (check_overflow(str, minus, count));
@@ -83,3 +82,5 @@ int	ft_atoi(const char *str)
 // {
 // 	printf("%d", ft_atoi("18446744073709551614"));
 // }
+
+ft_strmapi : [MISSING] ft_striteri : [MISSING] ft_putchar_fd : [MISSING] ft_putstr_fd : [MISSING] ft_putendl_fd : [MISSING] ft_putnbr_fd : [MISSING]
