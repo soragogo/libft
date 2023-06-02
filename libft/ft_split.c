@@ -53,38 +53,13 @@ static int ft_count_blocs(char const *s, char c)
 	return (count);
 }
 
-char **ft_split(char const *s, char c)
+static char **matrix_maker(char const *s, char c, char **matrix)
 {
 	int count;
 	int i;
-	char **matrix;
 
-	count = 0;
 	i = 0;
 
-	if (s == NULL)
-		return (NULL);
-	if (*s == 0)
-	{
-		matrix = (char **)malloc(sizeof(char *));
-		matrix[0] = NULL;
-		return (matrix);
-	}
-	if (c == 0)
-	{
-		matrix = malloc(sizeof(char *) * 2);
-		if (matrix == NULL)
-			return (NULL);
-		matrix[0] = malloc(sizeof(char) * (ft_strlen(s) + 1));
-		if (matrix[0] == NULL)
-		{
-			free(matrix);
-			return (NULL);
-		}
-		ft_strlcpy(matrix[0], s, ft_strlen(s) + 1);
-		matrix[1] = NULL;
-		return (matrix);
-	}
 	count = ft_count_blocs(s, c);
 	matrix = (char **)malloc(sizeof(char *) * (count + 1));
 	if (matrix == NULL)
@@ -110,6 +85,61 @@ char **ft_split(char const *s, char c)
 	}
 	matrix[i] = NULL;
 	return (matrix);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char **matrix;
+
+	if (s == NULL)
+		return (NULL);
+	if (*s == 0)
+	{
+		matrix = (char **)malloc(sizeof(char *));
+		matrix[0] = NULL;
+		return (matrix);
+	}
+	if (c == 0)
+	{
+		matrix = malloc(sizeof(char *) * 2);
+		if (matrix == NULL)
+			return (NULL);
+		matrix[0] = malloc(sizeof(char) * (ft_strlen(s) + 1));
+		if (matrix[0] == NULL)
+		{
+			free(matrix);
+			return (NULL);
+		}
+		ft_strlcpy(matrix[0], s, ft_strlen(s) + 1);
+		matrix[1] = NULL;
+		return (matrix);
+	}
+	matrix = NULL;
+	// count = ft_count_blocs(s, c);
+	// matrix = (char **)malloc(sizeof(char *) * (count + 1));
+	// if (matrix == NULL)
+	// 	return (NULL);
+	// count = 0;
+	// while (*s)
+	// {
+	// 	s += count;
+	// 	s = ft_ctrim(s, c);
+	// 	if (*s == 0)
+	// 		break;
+	// 	count = ft_untilc_len(s, c);
+	// 	matrix[i] = malloc(sizeof(char) * (count + 1));
+	// 	if (matrix[i] == NULL)
+	// 	{
+	// 		while (i > 0)
+	// 			free(matrix[--i]);
+	// 		free(matrix);
+	// 		return (NULL);
+	// 	}
+	// 	ft_strlcpy(matrix[i], s, count + 1);
+	// 	i++;
+	// }
+	// matrix[i] = NULL;
+	return (matrix_maker(s, c, matrix));
 }
 
 // int main()

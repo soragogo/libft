@@ -19,7 +19,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	if (dstsize == 0)
 		return (ft_strlen(src));
-
 	cat_len = 0;
 	if (dstsize < ft_strlen(dst))
 	{
@@ -30,7 +29,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	{
 		cat_len = dstsize - ft_strlen(dst);
 		return_item = ft_strlen(src) + ft_strlen(dst);
-
 		dstsize -= ft_strlen(dst);
 		dst += ft_strlen(dst);
 		while (cat_len > 1 && *src)
@@ -38,7 +36,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 			*dst++ = *src++;
 			cat_len--;
 		}
-
 		*dst = 0;
 	}
 	return (return_item);

@@ -32,7 +32,7 @@ static int check_overflow(const char *str, int minus, size_t count)
 	return (1);
 }
 
-static size_t ßßnum_len(const char *str)
+static size_t num_len(const char *str)
 {
 	size_t i;
 
