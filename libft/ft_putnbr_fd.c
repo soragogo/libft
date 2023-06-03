@@ -6,16 +6,16 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:18:33 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 14:19:14 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:56:46 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    char *s;
+	char	*s;
 
-    s = ft_itoa(n);
-    write(fd, s, ft_strlen(s));
+	s = ft_itoa(n);
+	write(fd, s, ft_strlen(s));
 }
