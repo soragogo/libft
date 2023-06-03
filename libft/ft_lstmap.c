@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:18:18 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 14:47:29 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 16:40:13 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*lst_new;
 	t_list	*lst_last;
 
-	if (lst == NULL)
-		return (NULL);
 	lst_new = NULL;
 	lst_last = NULL;
 	while (lst != NULL)
@@ -33,15 +31,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		if (lst_new == NULL)
-		{
 			lst_new = new;
-			lst_last = new;
-		}
 		else
-		{
 			lst_last->next = new;
-			lst_last = new;
-		}
+		lst_last = new;
 		lst = lst->next;
 	}
 	return (lst_new);
