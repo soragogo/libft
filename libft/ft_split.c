@@ -6,13 +6,13 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:09:01 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/01 22:03:17 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 15:01:43 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_untilc_len(char const *s, char c)
+static int	ft_untilc_len(char const *s, char c)
 {
 	int i;
 
@@ -22,7 +22,7 @@ static int ft_untilc_len(char const *s, char c)
 	return (i);
 }
 
-static char const *ft_ctrim(char const *s, char c)
+static char const	*ft_ctrim(char const *s, char c)
 {
 	if (*s == c)
 	{
@@ -32,9 +32,9 @@ static char const *ft_ctrim(char const *s, char c)
 	return (s);
 }
 
-static int ft_count_blocs(char const *s, char c)
+static int	ft_count_blocs(char const *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*s)
@@ -53,10 +53,10 @@ static int ft_count_blocs(char const *s, char c)
 	return (count);
 }
 
-static char **matrix_maker(char const *s, char c, char **matrix)
+static char	**matrix_maker(char const *s, char c, char **matrix)
 {
-	int count;
-	int i;
+	int	count;
+	int	i;
 
 	i = 0;
 
@@ -70,7 +70,7 @@ static char **matrix_maker(char const *s, char c, char **matrix)
 		s += count;
 		s = ft_ctrim(s, c);
 		if (*s == 0)
-			break;
+			break ;
 		count = ft_untilc_len(s, c);
 		matrix[i] = malloc(sizeof(char) * (count + 1));
 		if (matrix[i] == NULL)
@@ -87,9 +87,9 @@ static char **matrix_maker(char const *s, char c, char **matrix)
 	return (matrix);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **matrix;
+	char	**matrix;
 
 	if (s == NULL)
 		return (NULL);
@@ -115,30 +115,6 @@ char **ft_split(char const *s, char c)
 		return (matrix);
 	}
 	matrix = NULL;
-	// count = ft_count_blocs(s, c);
-	// matrix = (char **)malloc(sizeof(char *) * (count + 1));
-	// if (matrix == NULL)
-	// 	return (NULL);
-	// count = 0;
-	// while (*s)
-	// {
-	// 	s += count;
-	// 	s = ft_ctrim(s, c);
-	// 	if (*s == 0)
-	// 		break;
-	// 	count = ft_untilc_len(s, c);
-	// 	matrix[i] = malloc(sizeof(char) * (count + 1));
-	// 	if (matrix[i] == NULL)
-	// 	{
-	// 		while (i > 0)
-	// 			free(matrix[--i]);
-	// 		free(matrix);
-	// 		return (NULL);
-	// 	}
-	// 	ft_strlcpy(matrix[i], s, count + 1);
-	// 	i++;
-	// }
-	// matrix[i] = NULL;
 	return (matrix_maker(s, c, matrix));
 }
 
