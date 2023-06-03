@@ -6,15 +6,16 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:50 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:39 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:54:21 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memset(void *b, int c, int n)
+
+void	*ft_memset(void *b, int c, int n)
 {
-	char *p;
-	int i;
+	char	*p;
+	int		i;
 
 	p = b;
 	i = 0;
@@ -25,6 +26,7 @@ void *ft_memset(void *b, int c, int n)
 	}
 	return (b);
 }
+
 /*
 int main()
 {

@@ -6,16 +6,17 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:04 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/01 22:03:25 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:52:29 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_memcpy(void *dst, const void *src, int n)
+
+void	*ft_memcpy(void *dst, const void *src, int n)
 {
-	int i;
-	unsigned char *dst1;
-	unsigned char *src1;
+	int				i;
+	unsigned char	*dst1;
+	unsigned char	*src1;
 
 	i = 0;
 	if (dst == NULL && src == NULL)
