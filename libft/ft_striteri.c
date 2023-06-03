@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:18:43 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 15:03:11 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 16:19:50 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 	unsigned int	len;
 
+	if (s == NULL || f == NULL)
+		return ;
 	i = 0;
 	len = ft_strlen(s);
 	while (i < len)

@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:18:13 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 14:39:48 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 16:19:48 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*index;
 	t_list	*save;
 
-	index = *lst;
-	save = NULL;
 	if (lst == NULL || *lst == NULL || del == NULL)
 		return ;
+	index = *lst;
+	save = NULL;
 	while (index != NULL)
 	{
 		save = index->next;

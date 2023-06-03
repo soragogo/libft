@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 14:18:32 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 14:56:28 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 16:14:56 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	long long int	len;
 
+	if (s == NULL)
+		return ;
 	len = ft_strlen(s);
 	while (len > 0)
 	{
