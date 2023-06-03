@@ -6,26 +6,26 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:25:11 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/01 22:03:25 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:35:40 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_itoa_recursive(char *ascii, int n)
+void	ft_itoa_recursive(char *ascii, int n)
 {
-	unsigned long i;
-	unsigned long n_;
+	unsigned long	i;
+	unsigned long	n_;
 
 	n_ = (unsigned long)n;
 	if (n_ < 10)
-		*ascii++ = n_ + '0';
+	*ascii++ = n_ + '0';
 	if (n_ > 9)
 	{
 		i = 1;
 		while (i < n_)
 			i *= 10;
-		i /= 10;
+			i /= 10;
 		while (i != 0)
 		{
 			*ascii++ = n_ / i + '0';
@@ -36,9 +36,9 @@ void ft_itoa_recursive(char *ascii, int n)
 	*ascii = 0;
 }
 
-int digit_count(n)
+int	digit_count(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (n <= 0)
@@ -52,9 +52,9 @@ int digit_count(n)
 	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *ascii;
+	char	*ascii;
 
 	if (n == -2147483648)
 	{

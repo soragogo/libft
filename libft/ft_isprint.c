@@ -6,13 +6,13 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:47 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/29 14:29:06 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:29:22 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c <= 126 && c >= 32)
 		return (1);

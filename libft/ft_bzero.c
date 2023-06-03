@@ -6,16 +6,17 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:44:36 by ekamada           #+#    #+#             */
-/*   Updated: 2023/05/18 15:22:16 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 14:23:10 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_bzero(void *b, int n)
+
+void	*ft_bzero(void *b, int n)
 {
 	char	*p;
 	int		i;
-	
+
 	p = b;
 	i = 0;
 	while (i < n)
