@@ -6,22 +6,23 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 19:45:01 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 14:19:11 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 15:43:05 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_toupper(int c)
-{
-	int i = 0;
-	
 
+int	ft_toupper(int c)
+{
+	int	i;
+
+	i = 0;
 	if (c <= 'z' && c >= 'a')
 		c -= 32;
 	i++;
-
-	return c;
+	return (c);
 }
+
 /*
 int main()
 {
