@@ -58,7 +58,7 @@ B_SRCS = ft_lstnew.c \
 		 ft_lstiter.c \
 		 ft_lstmap.c
 
-OBJS = $(SRCS:.c=.o)
+
 
 B_OBJS = $(B_SRCS:.c=.o)
 
@@ -66,12 +66,22 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
+# ifeq ($(MAKEGOALD), bonus)
+# 	SRCS += ${B_SRCS}
+# endif
+
+ifdef WITH_BONUS
+SRCS+=$(B_SRCS)
+endif
+
+OBJS = $(SRCS:.c=.o)
+
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(B_OBJS)
-	ar rcs $(NAME) $(OBJS) $(B_OBJS)
-
+# bonus: $(OBJS) $(B_OBJS)
+bonus: 
+	make WITH_BONUS=1 ${NAME}
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@ -I.
 

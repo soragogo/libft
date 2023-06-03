@@ -6,7 +6,7 @@
 /*   By: ekamada <ekamada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:09:01 by ekamada           #+#    #+#             */
-/*   Updated: 2023/06/03 17:18:35 by ekamada          ###   ########.fr       */
+/*   Updated: 2023/06/03 21:58:14 by ekamada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,63 +21,55 @@ static int	ft_count_blocs(char const *s, char c)
 	{
 		while (*s == c)
 			s++;
-		if (*s)
+		if (*s != c)
 		{
 			count++;
-			while (*s && *s != c)
+			while (*s != c && *s)
 				s++;
 		}
+		while (*s == c)
+			s++;
 	}
 	return (count);
 }
 
-static char	**matrix_maker(char const *s, char c, char **matrix)
+static char	**matrix_malloc(int count, int i, char **matrix)
 {
-	int	i;
-	int	start;
-	int	end;
-	int	len;
-
-	i = 0;
-	start = 0;
-	while (s[start])
+	matrix[i] = malloc(sizeof(char) * (count + 1));
+	if (matrix[i] == NULL)
 	{
-		while (s[start] == c)
-			start++;
-		if (s[start] == '\0')
-			break ;
-		end = start;
-		while (s[end] && s[end] != c)
-			end++;
-		len = end - start;
-		matrix[i] = ft_substr(s, start, len);
-		if (matrix[i] == NULL)
-		{
-			while (i > 0)
-				free(matrix[--i]);
-			free(matrix);
-			return (NULL);
-		}
-		start = end;
-		i++;
-	}
-	matrix[i] = NULL;
-	return (matrix);
-}
-
-static char	**c_zero_split(char **matrix, char const *s)
-{
-	matrix = malloc(sizeof(char *) * 2);
-	if (matrix == NULL)
-		return (NULL);
-	matrix[0] = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (matrix[0] == NULL)
-	{
+		while (i > 0)
+			free(matrix[--i]);
 		free(matrix);
 		return (NULL);
 	}
-	ft_strlcpy(matrix[0], s, ft_strlen(s) + 1);
-	matrix[1] = NULL;
+	return (matrix);
+}
+
+static char	**matrix_maker(char const *s, char c, char **matrix)
+{
+	int	count;
+	int	i;
+
+	i = 0;
+	count = 0;
+	while (*s)
+	{
+		s += count;
+		while (*s == c)
+			s++;
+		if (*s == 0)
+			break ;
+		count = 0;
+		while (s[count] != c && s[count] != 0)
+			count++;
+		matrix = matrix_malloc(count, i, matrix);
+		if (matrix == NULL)
+			return (NULL);
+		ft_strlcpy(matrix[i], s, count + 1);
+		i++;
+	}
+	matrix[i] = NULL;
 	return (matrix);
 }
 
@@ -88,11 +80,19 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	if (*s == 0)
-		return ((char **)ft_calloc(1, sizeof(char *)));
+	{
+		matrix = (char **)malloc(sizeof(char *));
+		matrix[0] = NULL;
+		return (matrix);
+	}
 	if (c == 0)
 	{
-		matrix = NULL;
-		return (c_zero_split(matrix, s));
+		matrix = malloc(sizeof(char *) * 2);
+		if (matrix == NULL)
+			return (NULL);
+		*matrix = ft_strdup(s);
+		*(matrix + 1) = NULL;
+		return (matrix);
 	}
 	matrix = (char **)malloc(sizeof(char *) * (ft_count_blocs(s, c) + 1));
 	if (matrix == NULL)
